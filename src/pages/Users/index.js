@@ -14,10 +14,16 @@ export function Users() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await axios.get(
-          "https://gorest.co.in/public/v2/users"
-        );
-        setUsers(response.data);
+        const userList = JSON.parse(localStorage.getItem("userData"));
+        if (userList) {
+          setUsers(userList);
+        } else {
+          const response = await axios.get(
+            "https://gorest.co.in/public/v2/users"
+          );
+          setUsers(response.data);
+          localStorage.setItem("userData", JSON.stringify(response.data));
+        }
       } catch (error) {
         console.log(error);
       }
