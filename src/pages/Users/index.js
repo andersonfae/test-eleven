@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Cards } from "../../components/Cards";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 export function Users() {
@@ -45,7 +45,7 @@ export function Users() {
       return user.status === checkStatus;
     });
     setFilteredUsers(usersByActive);
-  }, [setSearch, search, checkStatus, setCheckStatus]);
+  }, [setSearch, search, checkStatus, setCheckStatus, users]);
 
   function handleSearch(e) {
     setSearch(e.target.value);
