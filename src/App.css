@@ -28,6 +28,28 @@
   color: #61dafb;
 }
 
+.success {
+  background-color: rgb(132 204 22);
+  color: #000;
+}
+
+.error {
+  background-color: rgb(153 27 27);
+  color: #fff;
+}
+
+.message {
+  display: inline-block;
+}
+
+.active {
+  color: green;
+}
+
+.inactive {
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
